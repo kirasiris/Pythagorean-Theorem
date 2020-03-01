@@ -1,13 +1,10 @@
 using System;
 using System.Globalization;
 
-namespace Function2_CS_Bickham_Fonseca
-{
-    class Theorem
-    {
-        static void parabola(float a,
-                         float b, float c)
-        {
+namespace Function2_CS_Bickham_Fonseca{
+
+    class Theorem {
+        static void parabola(float a, float b, float c) {
             Console.WriteLine("Vertex: (" +
                              (-b / (2 * a)) + ", " +
                              (((4 * a * c) - (b * b)) /
@@ -22,8 +19,8 @@ namespace Function2_CS_Bickham_Fonseca
                          (int)(c - ((b * b) + 1) * 4 * a));
         }
 
-        void findRoots(int a, int b, int c)
-        {
+        void findRoots(int a, int b, int c) {
+
             NumberFormatInfo setPrecision = new NumberFormatInfo();
 
             setPrecision.NumberDecimalDigits = 3;
@@ -57,10 +54,9 @@ namespace Function2_CS_Bickham_Fonseca
             }
         }
 
-        public static bool IsAllLetters(string s)
-        {
-            foreach (char c in s)
-            {
+        public static bool IsAllLetters(string s) {
+            foreach (char c in s) {
+
                 if (!Char.IsLetter(c)) {
 
                     return false;
@@ -69,8 +65,7 @@ namespace Function2_CS_Bickham_Fonseca
             return true;
         }
 
-        public void showMenu()
-        {
+        public void showMenu() {
             Console.WriteLine("P = a and b solve the Pythagorean Theorem - length of side c, the Hypotenuse");
             Console.WriteLine("S = given input of x1 and y1 and given input of x2 and y2 calculate the slope of a line");
             Console.WriteLine("V = accept the appropriate to calculate the vertex of a parabola");
@@ -104,8 +99,7 @@ namespace Function2_CS_Bickham_Fonseca
                 Console.WriteLine("The side of c is equal to:");
                 Console.WriteLine(c.ToString("N", setPrecision));
 
-            }
-            else if(opt == "S" || opt == "s") {
+            } else if(opt == "S" || opt == "s") {
 
                 int x1 = 0;
                 int x2 = 0;
@@ -129,8 +123,7 @@ namespace Function2_CS_Bickham_Fonseca
                 int m = y2 - y1 / x2 - x1;
                 Console.WriteLine("The side of c is equal to:");
                 Console.WriteLine(m.ToString("N", setPrecision));
-            }
-            else if(opt == "V" || opt == "v") {
+            } else if(opt == "V" || opt == "v") {
                 int a = 0;
                 int b = 0;
                 int c = 0;
@@ -148,8 +141,7 @@ namespace Function2_CS_Bickham_Fonseca
 
                 Console.WriteLine("The vertex of a parabola is:");
                 parabola(a, b, c);
-            }
-            else if (opt == "Q" || opt == "q") {
+            } else if (opt == "Q" || opt == "q") {
                 int a = 0;
                 int b = 0;
                 int c = 0;
@@ -167,21 +159,15 @@ namespace Function2_CS_Bickham_Fonseca
                 Console.WriteLine("X is equal to:");
                 findRoots(a, b, c);
 
-            }
-            else if (opt == "Z" || opt == "z") {
+            } else if (opt == "Z" || opt == "z") {
                 Console.Clear();
-            }
-            else
-            {
-                return;
+            } else {
+              return;
             }
         }
     }
-    class Program
-    {
-
-        static void Main(string[] args)
-        {
+    class Program {
+        static void Main(string[] args) {
             Theorem t = new Theorem();
             string option = "";
             do {
